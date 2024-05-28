@@ -1,121 +1,240 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Open-sans', sans-serif;
 }
 
-.container{
+.container {
     width: 100%;
     max-width: 1025px;
     padding: 0 10px;
     margin: 0 auto;
 }
 
-/* header */
-
-header{
-    background-color: #706AC1;
-    padding: 10px 0;
+a {
+    text-decoration: none;
+    color: #fff;
 }
 
-header .container{
+html {
+    scroll-behavior: smooth;
+}
+
+/* header */
+
+header {
+    background-color: #706AC1;
+    padding: 20px 0;
+    font-weight: bold;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .5);
+}
+
+header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: #f2f2f2;
 }
 
-header .container nav ul li{
+
+.menu-hamburguer {
+    width: 30px;
+    cursor: pointer;
+    display: none;
+}
+
+.menu-hamburguer div {
+    width: 100%;
+    height: 4px;
+    margin: 3px 0px;
+    background-color: #f2f2f2;
+    border-radius: 2px;
+}
+
+.menu {
+    height: 100%;
+}
+
+.menu li {
     float: left;
     list-style: none;
-    padding: 0 10px;
+    margin-left: 20px;
+    padding: 10px 0px;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    transition: all .5s;
+}
+
+header .container nav ul li:hover {
+    border-color: #f2f2f2;
 }
 
 /* Home */
 
-section{
+section {
     padding: 20px 0px;
 }
 
-#home .container{
+#home .container {
     display: grid;
     grid-template-columns: repeat(2, 45%);
     column-gap: 10%;
 }
 
-.img-store{
+.img-store {
     max-width: 100%;
-    }
+}
 
-.img-store img{
-    max-width: 700px;
+.img-store img {
     width: 100%;
 }
 
-.about-store{
+.about-store {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-.container h2{
+
+.container h2 {
     border-bottom: 2px solid;
     padding-bottom: 8px;
     margin-bottom: 8px;
     font-size: 2em;
 }
-.about-store h2{
+
+.about-store h2 {
     color: #3f3f90;
     border-color: #706AC1;
 }
 
 
-.about-store p{
+.about-store p {
     color: #706AC1;
     font-size: 1.5em;
 }
 
 /* Produtos */
 
-#produtos{
+#produtos {
     background-color: #706AC1;
     color: #f2f2f2;
+    box-shadow: 0 -5px 10px rgba(0, 0, 0, .5);
+
 }
 
-#produtos .container h2{
+#produtos .container h2 {
     font-size: 2rem;
     margin-bottom: 30px;
 }
 
-.cards-produtos{
+.cards-produtos {
     display: grid;
     grid-template-columns: repeat(4, 24.25%);
     column-gap: 1%;
 }
-.cards-produtos li{
+
+.cards-produtos li {
     background-color: #897fd9;
     padding: 20px 8px;
     list-style: none;
     border-radius: 5px;
 }
 
-.cards-produtos li img{
-    max-width: 100%;
+.cards-produtos li img {
+    width: 100%;
     margin-bottom: 8px;
+    border-radius: 5px;
 }
 
-.cards-produtos li h3{
+.cards-produtos li h3 {
     color: #3f3f90;
-    margin-bottom:5px;
+    padding: 10px 0;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #3f3f90;
 }
 
-.cards-produtos li button{
+.cards-produtos li p {
+    font-weight: bold;
+}
+
+.cards-produtos li button {
+    width: 100%;
     background-color: #262a77;
     border: none;
     padding: 10px;
     border-radius: 5px;
-    margin: 10px 0;
+    margin-top: 30px;
+    color: #f2f2f2;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all .5s;
 }
 
+.cards-produtos li button:hover {
+    background-color: #3f3f90;
+}
 
+/* footer */
 
+footer {
+    background-color: #3f3f90;
+    padding: 10px;
+}
+
+footer .container {
+    color: #f2f2f2;
+    text-align: center;
+}
+
+@media screen and (max-width:640px) {
+    .container {
+        width: 90%;
+        flex-wrap: wrap;
+    }
+
+    .menu {
+        display: none;
+        width: 100%;
+    }
+
+    header .container nav ul li {
+        text-align: center;
+        float: none;
+    }
+
+    .menu-hamburguer {
+        display: inline;
+    }
+
+    #home .container {
+        grid-template-columns: 100%;
+        margin-bottom: 30px;
+    }
+
+    #produtos .container {
+        margin-bottom: 30px;
+    }
+
+    .cards-produtos {
+        grid-template-columns: 100%;
+        row-gap: 10px;
+    }
+}
+
+@media screen and (min-width:641px) and (max-width:1023px) {
+    .container {
+        width: 90%;
+        flex-wrap: wrap;
+    }
+
+    #home .container {
+        grid-template-columns: 100%;
+        margin-bottom: 30px;
+    }
+
+    .cards-produtos {
+        grid-template-columns: repeat(2, 49.5%);
+        row-gap: 1%;
+    }
+}
